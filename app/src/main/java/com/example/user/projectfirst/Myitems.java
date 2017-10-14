@@ -4,11 +4,13 @@ public class Myitems {
     private int img;
     private String name;
     private String cost;
+    private String star;
 
-    public Myitems(int img, String name, String cost) {
+    public Myitems(int img, String name, String cost, String star) {
         this.img = img;
         this.name = name;
         this.cost = cost;
+        this.star = star;
     }
 
     public int getImg() {
@@ -20,4 +22,5 @@ public class Myitems {
     public String getCost() {
         return cost;
     }
+    public String getStar() { return star; }
 }

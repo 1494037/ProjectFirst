@@ -41,16 +41,32 @@
                 android:text="@string/address"
                 android:textColor="@android:color/holo_blue_dark" />
 
-            <TextView
-                android:id="@+id/textView3"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/tel"
-                android:textColor="@android:color/holo_red_dark" />
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="@string/tel"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <ImageButton
+                    android:id="@+id/button4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/button1" />
+
+            </LinearLayout>
 
             <TextView
+                android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -60,6 +76,11 @@
 
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/nope"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -67,10 +88,5 @@
         android:background="@android:color/holo_orange_light"
         android:gravity="center_vertical"
         android:text="   Menu" />
-
-    <ListView
-        android:id="@+id/nope"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
 
 </LinearLayout>
