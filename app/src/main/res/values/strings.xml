@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">한성 맛집 앱</string>
+    <string name="store">김치나베 돈카츠 전문점 돈천동식당</string>
+    <string name="address">서울 종로구 창경궁로34길 15</string>
+    <string name="tel">070-7766-0144</string>
+    <string name="time">매일 11:00 - 21:00</string>
 </resources>

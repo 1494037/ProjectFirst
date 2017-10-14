@@ -5,19 +5,27 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/text4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="text1"></TextView>
+        android:text="text1"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="11pt"></TextView>
 
     <TextView
+        android:id="@+id/text5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="text2"></TextView>
+        android:text="text2"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="10pt"></TextView>
 
     <TextView
+        android:id="@+id/text6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="text3"></TextView>
+        android:text="text3"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="9pt"></TextView>
 
 </LinearLayout>
