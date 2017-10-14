@@ -24,11 +24,11 @@ public class FirstActivity extends AppCompatActivity {
 
         ArrayList<Myitems> data = new ArrayList();
 
-        data.add(new Myitems("a1", "김치나베 돈카츠", "6500"));
-        data.add(new Myitems("b1", "가츠동", "6500"));
-        data.add(new Myitems("c1", "돈니꾸동", "6500"));
-        data.add(new Myitems("d1", "수제 돈카츠", "6500"));
-        data.add(new Myitems("e1", "오뎅우동", "6500"));
+        data.add(new Myitems(R.drawable.new1, "김치나베 돈카츠", "6500"));
+        data.add(new Myitems(R.drawable.new2, "가츠동", "6500"));
+        data.add(new Myitems(R.drawable.new3, "돈니꾸동", "6500"));
+        data.add(new Myitems(R.drawable.new4, "수제 돈카츠", "6500"));
+        data.add(new Myitems(R.drawable.new5, "오뎅우동", "6500"));
 
 
         myadapter = new MyAdapter(data, this, R.layout.yep);

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,11 +41,11 @@ public class MyAdapter extends BaseAdapter {
             view = intflater.inflate(mResource, viewGroup, false);
         }
 
-        TextView text1 = (TextView) view.findViewById(R.id.text1);
+        ImageView text1 = (ImageView) view.findViewById(R.id.text1);
         TextView text2 = (TextView) view.findViewById(R.id.text2);
         TextView text3 = (TextView) view.findViewById(R.id.text3);
 
-        text1.setText(mData.get(i).getCont());
+        text1.setImageResource(mData.get(i).getImg());
         text2.setText(mData.get(i).getName());
         text3.setText(mData.get(i).getCost());
 

@@ -1,18 +1,18 @@
 package com.example.user.projectfirst;
 
 public class Myitems {
-    private String cont;
+    private int img;
     private String name;
     private String cost;
 
-    public Myitems(String cont, String name, String cost) {
-        this.cont = cont;
+    public Myitems(int img, String name, String cost) {
+        this.img = img;
         this.name = name;
         this.cost = cost;
     }
 
-    public String getCont() {
-        return cont;
+    public int getImg() {
+        return img;
     }
     public String getName() {
         return name;
