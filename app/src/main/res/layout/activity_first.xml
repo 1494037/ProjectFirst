@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="help"/>
+        android:background="@android:color/holo_blue_light"
+        android:gravity="center"
+        android:text="store"
+        android:textSize="11pt"/>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
         android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="holy moly"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="242dp"
+            android:layout_height="117dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/new0" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="111"/>
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="111"
+                android:textColor="@android:color/holo_blue_dark" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="222"/>
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="222"
+                android:textColor="@android:color/holo_red_dark" />
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="333"/>
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="333" />
         </LinearLayout>
+
     </LinearLayout>
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="help2"/>
+        android:background="@android:color/holo_orange_light"
+        android:text="   Menu" />
 
     <ListView
+        android:id="@+id/nope"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/nope">
-    </ListView>
+        android:layout_height="match_parent"></ListView>
 
 </LinearLayout>

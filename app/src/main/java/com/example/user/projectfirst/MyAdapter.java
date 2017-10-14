@@ -45,8 +45,8 @@ public class MyAdapter extends BaseAdapter {
         TextView text3 = (TextView) view.findViewById(R.id.text3);
 
         text1.setText(mData.get(i).getCont());
-        text2.setText(mData.get(i).getTime());
-        text3.setText(mData.get(i).getClass1());
+        text2.setText(mData.get(i).getName());
+        text3.setText(mData.get(i).getCost());
 
         return view;
     }
