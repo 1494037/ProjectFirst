@@ -48,7 +48,7 @@ public class FirstActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View vClicked, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                intent.putExtra("image", ((Myitems)myadapter.getItem(position)).getImg());
+                intent.putExtra("img", ((Myitems)myadapter.getItem(position)).getImg());
                 intent.putExtra("name", ((Myitems)myadapter.getItem(position)).getName());
                 intent.putExtra("cost", ((Myitems)myadapter.getItem(position)).getCost());
                 intent.putExtra("star", ((Myitems)myadapter.getItem(position)).getStar());
