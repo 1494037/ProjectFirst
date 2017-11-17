@@ -7,23 +7,29 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class addActivity extends AppCompatActivity {
     private static String TAG="MultimediaTest";
     private ListView mListView;
     private int mSelectePoistion;
-    private MediaItemAdapter mAdapter;
+   // private MediaItemAdapter mAdapter;
     private MediaPlayer mMediaPlayer;
     private MediaRecorder mMediaRecorder;
     private String mVideoFileName = null;
@@ -109,4 +115,10 @@ public class addActivity extends AppCompatActivity {
         }
 
     }
+    private String currentDateFormat(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HH_mm_ss");
+        String  currentTimeStamp = dateFormat.format(new Date());
+        return currentTimeStamp;
+    }
+
 }
