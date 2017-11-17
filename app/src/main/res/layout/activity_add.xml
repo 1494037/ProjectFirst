@@ -30,52 +30,9 @@
             android:text="사진촬영"
             />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/addtextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/address"
-                android:textColor="@android:color/holo_blue_dark" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/addtextView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center_vertical"
-                    android:text="@string/tel"
-                    android:textColor="@android:color/holo_red_dark" />
-
-                <ImageButton
-                    android:id="@+id/addbutton4"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/button1" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/addtextView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="@string/time" />
-        </LinearLayout>
 
     </LinearLayout>
 
