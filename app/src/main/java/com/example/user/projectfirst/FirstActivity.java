@@ -42,7 +42,7 @@ public class FirstActivity extends AppCompatActivity {
 
         myadapter = new MyAdapter(data, this, R.layout.yep);
 
-        ListView listView = (ListView)findViewById(R.id.nope);
+        ListView listView = (ListView) findViewById(R.id.nope);
         listView.setAdapter(myadapter);
 
         listView.setDivider(new ColorDrawable(Color.GRAY));
@@ -51,15 +51,15 @@ public class FirstActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View vClicked, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                intent.putExtra("img", ((Myitems)myadapter.getItem(position)).getImg());
-                intent.putExtra("name", ((Myitems)myadapter.getItem(position)).getName());
-                intent.putExtra("cost", ((Myitems)myadapter.getItem(position)).getCost());
-                intent.putExtra("star", ((Myitems)myadapter.getItem(position)).getStar());
+                intent.putExtra("img", ((Myitems) myadapter.getItem(position)).getImg());
+                intent.putExtra("name", ((Myitems) myadapter.getItem(position)).getName());
+                intent.putExtra("cost", ((Myitems) myadapter.getItem(position)).getCost());
+                intent.putExtra("star", ((Myitems) myadapter.getItem(position)).getStar());
                 startActivity(intent);
             }
         });
 
-        ImageButton btn = (ImageButton)findViewById(R.id.button4);
+        ImageButton btn = (ImageButton) findViewById(R.id.button4);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,6 +86,7 @@ public class FirstActivity extends AppCompatActivity {
                 return true;
             default:
 
-        return super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

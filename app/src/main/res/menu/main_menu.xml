@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/add_store"
-        android:title="맛집 추가"/>
+        android:title="Add Store"/>
 
 </menu>

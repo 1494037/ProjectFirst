@@ -20,12 +20,15 @@
         android:background="@android:color/white"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/addimageView"
-            android:layout_width="211dp"
-            android:layout_height="117dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/new0" />
+        <Button
+            android:id="@+id/imageCaptureBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:layout_gravity="center"
+            android:text="사진촬영"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
