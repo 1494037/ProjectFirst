@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".SecondActivity"
             android:parentActivityName=".FirstActivity"/>
+        <activity android:name=".addActivity"
+            android:parentActivityName=".FirstActivity"/>
     </application>
 
 </manifest>
