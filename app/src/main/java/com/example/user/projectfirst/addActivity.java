@@ -28,10 +28,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class addActivity extends AppCompatActivity {
-    //public DBHelper mDBHelper;
+    public DBHelper mDBHelper;
     String StoreImg;
-    private File mPhotoFile =null;         // 사진 저장할 파일 이름
-    private String mPhotoFileName = null; //* 사진 이름
+    private File mPhotoFile =null;
+    private String mPhotoFileName = null;
 
 
     @Override
@@ -49,7 +49,7 @@ public class addActivity extends AppCompatActivity {
         Button storeRegist = (Button) findViewById(R.id.storeRegist);
 
 
-        //mDBHelper = new DBHelper(this);
+        mDBHelper = new DBHelper(this);
 
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -79,18 +79,18 @@ public class addActivity extends AppCompatActivity {
         EditText phone = (EditText) findViewById(R.id.callnumber);
 
 
-        //long nOfRows = mDBHelper.insertUserByMethod(name.getText().toString(), address.getText().toString(), phone.getText().toString(), StoreImg  );   //이미지 받아오는것 확인 / 수정!!!
+        long nOfRows = mDBHelper.insertUserByMethod(name.getText().toString(), address.getText().toString(), phone.getText().toString(), StoreImg  );   //이미지 받아오는것 확인 / 수정!!!
 
 
 
         Log.v("Textadfsdf", String.valueOf(name));
-        //Log.v("Textadfsdf", String.valueOf(picture));
-/*
+
+
         if (nOfRows > 0)
             Toast.makeText(this, "맛집이 등록되었습니다.", Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(this, "다시 입력해주세요.", Toast.LENGTH_SHORT).show();
-            */
+
     }
 
 
@@ -142,7 +142,7 @@ public class addActivity extends AppCompatActivity {
         String[] permissions = {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.RECORD_AUDIO
+
         };
 
         int permissionCheck = PackageManager.PERMISSION_GRANTED;
