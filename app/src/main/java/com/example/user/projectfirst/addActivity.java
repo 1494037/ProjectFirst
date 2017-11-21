@@ -16,9 +16,11 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.File;
@@ -26,15 +28,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class addActivity extends AppCompatActivity {
-    private static String TAG="MultimediaTest";
-    private ListView mListView;
-    private int mSelectePoistion;
-   // private MediaItemAdapter mAdapter;
-    private MediaPlayer mMediaPlayer;
-    private MediaRecorder mMediaRecorder;
-    private String mVideoFileName = null;
-    private File mPhotoFile =null;
-    private String mPhotoFileName = null;
+    //public DBHelper mDBHelper;
+    String StoreImg;
+    private File mPhotoFile =null;         // 사진 저장할 파일 이름
+    private String mPhotoFileName = null; //* 사진 이름
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,31 +43,57 @@ public class addActivity extends AppCompatActivity {
             mPhotoFileName = savedInstanceState.getString("mPhotoFileName");
 
 
-
-        Button imageCaptureBtn = (Button) findViewById(R.id.imageCaptureBtn);
-
         checkDangerousPermissions();
 
-        imageCaptureBtn.setOnClickListener(new View.OnClickListener() {
+        ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
+        Button storeRegist = (Button) findViewById(R.id.storeRegist);
+
+
+        //mDBHelper = new DBHelper(this);
+
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 dispatchTakePictureIntent();
             }
         });
 
+        storeRegist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent_MainActivity = new Intent(getApplicationContext(), FirstActivity.class);
+
+                insertRecord();
+
+                startActivity(intent_MainActivity);
+            }
+        });
 
 
     }
-    static final int REQUEST_IMAGE_PICK = 0;
 
-    private void dispatchPickPictureIntent() {
-        Intent pickPictureIntent = new Intent(Intent.ACTION_PICK);
-        pickPictureIntent.setType("image/*");
+    private void insertRecord() {                          //레코드 추가 삽입 가능
+        EditText name = (EditText) findViewById(R.id.storename);
+        EditText address = (EditText) findViewById(R.id.address);
+        EditText phone = (EditText) findViewById(R.id.callnumber);
 
-        if (pickPictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(pickPictureIntent,REQUEST_IMAGE_PICK);
-        }
+
+        //long nOfRows = mDBHelper.insertUserByMethod(name.getText().toString(), address.getText().toString(), phone.getText().toString(), StoreImg  );   //이미지 받아오는것 확인 / 수정!!!
+
+
+
+        Log.v("Textadfsdf", String.valueOf(name));
+        //Log.v("Textadfsdf", String.valueOf(picture));
+/*
+        if (nOfRows > 0)
+            Toast.makeText(this, "맛집이 등록되었습니다.", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(this, "다시 입력해주세요.", Toast.LENGTH_SHORT).show();
+            */
     }
+
+
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -79,10 +104,11 @@ public class addActivity extends AppCompatActivity {
             //1. 카메라 앱으로 찍은 이미지를 저장할 파일 객체 생성
             mPhotoFileName = "IMG"+currentDateFormat()+".jpg";
             mPhotoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), mPhotoFileName);
+            StoreImg = mPhotoFile.getAbsolutePath();
 
             if (mPhotoFile !=null) {
                 //2. 생성된 파일 객체에 대한 Uri 객체를 얻기
-                Uri imageUri = FileProvider.getUriForFile(this, "com.example.kwanwoo.multimediatest", mPhotoFile);
+                Uri imageUri = FileProvider.getUriForFile(this, "com.example.user.projectfirst", mPhotoFile);
 
                 //3. Uri 객체를 Extras를 통해 카메라 앱으로 전달
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,imageUri);
@@ -91,6 +117,24 @@ public class addActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "file null", Toast.LENGTH_SHORT).show();
         }
     }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        //촬영한 사진 화면에 나타내기
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            if (mPhotoFileName != null){
+                mPhotoFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), mPhotoFileName);
+                Uri uri = Uri.fromFile(mPhotoFile);
+                ImageButton imageButton = (ImageButton)findViewById(R.id.imageButton);
+                imageButton.setImageURI(uri);
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "mPhotoFile is null", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+
 
     final int  REQUEST_EXTERNAL_STORAGE_FOR_MULTIMEDIA=1;
 
