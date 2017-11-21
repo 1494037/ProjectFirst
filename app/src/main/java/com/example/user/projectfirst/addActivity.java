@@ -62,7 +62,7 @@ public class addActivity extends AppCompatActivity {
         storeRegist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_MainActivity = new Intent(getApplicationContext(), FirstActivity.class);
+                Intent intent_MainActivity = new Intent(getApplicationContext(), MainActivity.class);
 
                 insertRecord();
 

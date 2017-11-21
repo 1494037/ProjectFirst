@@ -25,6 +25,17 @@
         <activity android:name=".SecondActivity"
             android:parentActivityName=".FirstActivity"/>
 
+        <activity android:name=".MainActivity">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
         <activity android:name=".addActivity"
             android:parentActivityName=".FirstActivity"
             android:label="메뉴 등록">
@@ -35,6 +46,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".addMenu"
+            android:label="메뉴 등록">
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".detailActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Food Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <data android:scheme="tel" />
+            </intent-filter>
+        </activity>
+
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
