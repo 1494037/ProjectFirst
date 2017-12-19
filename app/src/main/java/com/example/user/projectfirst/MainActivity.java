@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTi
             case R.id.add_menu:
                 Intent intent = new Intent(getApplicationContext(), addMenu.class);
                 startActivity(intent);
+            case R.id.add_store:
+                Intent intent2 = new Intent(getApplicationContext(), addActivity.class);
+                startActivity(intent2);
                 return true;
         }
         return false;

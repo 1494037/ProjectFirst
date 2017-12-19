@@ -81,7 +81,7 @@
         </provider>
 
         <activity android:name=".MapActivity" />
-        <activity android:name=".store" />
+        <activity android:name=".stores" />
         <activity android:name=".MenuDB"></activity>
     </application>
 

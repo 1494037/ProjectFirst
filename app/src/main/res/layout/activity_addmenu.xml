@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="메뉴 제목   :   "
+                    android:text="메뉴 이름   :   "
                     />
                 <EditText
                     android:textColor="@color/colorAccent"
