@@ -88,9 +88,6 @@ public class addActivity extends AppCompatActivity {
 
 
 
-        Log.v("Textadfsdf", String.valueOf(name));
-
-
         if (nOfRows > 0)
             Toast.makeText(this, "맛집이 등록되었습니다.", Toast.LENGTH_SHORT).show();
         else
@@ -100,7 +97,7 @@ public class addActivity extends AppCompatActivity {
 
 
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_IMAGE_CAPTURE = 30;
 
     private void dispatchTakePictureIntent() { //카메라
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

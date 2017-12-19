@@ -83,6 +83,8 @@ public class FirstActivity extends AppCompatActivity {
 
             case R.id.add_store:
                 startActivity(new Intent(this, addActivity.class));
+            case R.id.map:
+                startActivity(new Intent(this, MapActivity.class));
                 return true;
             default:
 

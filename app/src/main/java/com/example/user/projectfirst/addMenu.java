@@ -17,30 +17,28 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+//이 엑티비티는 상세 메뉴 추가 엑티비티입니다
 
 
 public class addMenu extends AppCompatActivity {
 
     String StoreImg;
-    final static String TAG="GBHouse";
-
-    private String mPhotoFileName = null;
-    private File mPhotoFile = null;
 
     EditText m_menu_name;
     EditText m_menu_price;
     EditText m_menu_explanation;
     ImageButton m_menu_Picture;
-
+    private String mPhotoFileName = null;
+    private File mPhotoFile = null;
     private DBHelper2 mDbHelper;
 
-    Button menu_enrollmentBtn;
+    Button menu_addBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_addmenu);
         super.onCreate(savedInstanceState);
 
-        menu_enrollmentBtn = (Button) findViewById(R.id.menu_1);
+        menu_addBtn = (Button) findViewById(R.id.menu_1);
 
         m_menu_name = (EditText) findViewById(R.id.menu_title);
         m_menu_price = (EditText) findViewById(R.id.menu_price);
@@ -59,7 +57,7 @@ public class addMenu extends AppCompatActivity {
 
 
 
-        menu_enrollmentBtn.setOnClickListener(new View.OnClickListener() {
+        menu_addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent_MainActivity = new Intent(getApplicationContext(), MainActivity.class);

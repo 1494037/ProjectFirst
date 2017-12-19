@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.projectfirst">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBSZmsJRW73rz722L4Fsf3HPASSqXOoiUU" />
 
         <activity android:name=".FirstActivity">
             <intent-filter>
@@ -21,66 +28,61 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SecondActivity"
-            android:parentActivityName=".FirstActivity"/>
-
+        <activity
+            android:name=".SecondActivity"
+            android:parentActivityName=".FirstActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-        <activity android:name=".addActivity"
-            android:parentActivityName=".FirstActivity"
-            android:label="맛집 등록">
+        <activity
+            android:name=".addActivity"
+            android:label="맛집 등록"
+            android:parentActivityName=".FirstActivity">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".addMenu"
+        <activity
+            android:name=".addMenu"
             android:label="메뉴 등록">
             <intent-filter>
-
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".detailActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Food Activity">
+        <activity
+            android:name=".detailActivity"
+            android:label="Food Activity"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <data android:scheme="tel" />
             </intent-filter>
         </activity>
-
-
 
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.user.projectfirst;"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
 
-
+        <activity android:name=".MapActivity" />
+        <activity android:name=".store" />
+        <activity android:name=".MenuDB"></activity>
     </application>
 
 </manifest>
