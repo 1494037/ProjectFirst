@@ -27,6 +27,11 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+//이 엑티비티는 맛집추가하는 엑티비티입니다
+//기존 FirstAcitivity에서 메뉴바에 add store클릭시 이동되는 페이지
+//
+
+
 public class addActivity extends AppCompatActivity {
     public DBHelper mDBHelper;
     String StoreImg;
@@ -97,7 +102,7 @@ public class addActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    private void dispatchTakePictureIntent() {
+    private void dispatchTakePictureIntent() { //카메라
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -138,7 +143,7 @@ public class addActivity extends AppCompatActivity {
 
     final int  REQUEST_EXTERNAL_STORAGE_FOR_MULTIMEDIA=1;
 
-    private void checkDangerousPermissions() {
+    private void checkDangerousPermissions() {//기본체크
         String[] permissions = {
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,

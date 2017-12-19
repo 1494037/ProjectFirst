@@ -38,7 +38,7 @@
 
         <activity android:name=".addActivity"
             android:parentActivityName=".FirstActivity"
-            android:label="메뉴 등록">
+            android:label="맛집 등록">
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />

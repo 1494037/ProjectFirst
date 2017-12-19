@@ -5,5 +5,8 @@
     <item
         android:id="@+id/add_store"
         android:title="Add Store"/>
+    <item
+        android:id="@+id/add_menu"
+        android:title="Add Menu"/>
 
 </menu>

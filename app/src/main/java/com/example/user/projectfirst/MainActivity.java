@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnTi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.add_store:
+            case R.id.add_menu:
                 Intent intent = new Intent(getApplicationContext(), addMenu.class);
                 startActivity(intent);
                 return true;
